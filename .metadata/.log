@@ -1529,3 +1529,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-05-04 22:47:13.681
 !MESSAGE Log4j2 initialized with config file C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-05-04 22:48:07.435
+!MESSAGE Started RMI Server, listening on port 41337

@@ -871,7 +871,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000065       0x19 ./Startup/startup_stm32f407vgtx.o
 
-.debug_macro    0x00000000     0x17df
+.debug_macro    0x00000000     0x1841
  .debug_macro   0x00000000       0x81 ./Driver/Src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000081      0xad8 ./Driver/Src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000b59       0x22 ./Driver/Src/stm32f407xx_gpio_driver.o
@@ -880,22 +880,22 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000c5a      0x103 ./Driver/Src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000d5d       0x6a ./Driver/Src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000dc7      0x1df ./Driver/Src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00000fa6      0x318 ./Driver/Src/stm32f407xx_gpio_driver.o
- .debug_macro   0x000012be       0xc4 ./Driver/Src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00001382       0x75 ./Src/002_Toggle_LED_onInput.o
- .debug_macro   0x000013f7      0x31e ./Src/002_Toggle_LED_onInput.o
- .debug_macro   0x00001715       0xca ./Src/002_Toggle_LED_onInput.o
+ .debug_macro   0x00000fa6      0x349 ./Driver/Src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x000012ef       0xc4 ./Driver/Src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x000013b3       0x75 ./Src/002_Toggle_LED_onInput.o
+ .debug_macro   0x00001428      0x34f ./Src/002_Toggle_LED_onInput.o
+ .debug_macro   0x00001777       0xca ./Src/002_Toggle_LED_onInput.o
 
 .debug_line     0x00000000      0xfb8
  .debug_line    0x00000000      0xa05 ./Driver/Src/stm32f407xx_gpio_driver.o
  .debug_line    0x00000a05      0x538 ./Src/002_Toggle_LED_onInput.o
  .debug_line    0x00000f3d       0x7b ./Startup/startup_stm32f407vgtx.o
 
-.debug_str      0x00000000     0x574e
- .debug_str     0x00000000     0x574e ./Driver/Src/stm32f407xx_gpio_driver.o
-                               0x5855 (size before relaxing)
- .debug_str     0x0000574e     0x5682 ./Src/002_Toggle_LED_onInput.o
- .debug_str     0x0000574e       0x89 ./Startup/startup_stm32f407vgtx.o
+.debug_str      0x00000000     0x579a
+ .debug_str     0x00000000     0x579a ./Driver/Src/stm32f407xx_gpio_driver.o
+                               0x58a1 (size before relaxing)
+ .debug_str     0x0000579a     0x56ce ./Src/002_Toggle_LED_onInput.o
+ .debug_str     0x0000579a       0x89 ./Startup/startup_stm32f407vgtx.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Driver/Src/stm32f407xx_gpio_driver.o
