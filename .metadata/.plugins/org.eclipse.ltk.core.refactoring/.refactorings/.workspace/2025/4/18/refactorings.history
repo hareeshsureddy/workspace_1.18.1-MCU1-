@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;CLOCK&apos; to &apos;003_CLOCK&apos;" description="Rename resource &apos;CLOCK&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CLOCK" name="003_CLOCK" stamp="1745757934670" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Pheripharal clock Enable&apos; to &apos;004_Pheripharal clock Enable&apos;" description="Rename resource &apos;Pheripharal clock Enable&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Pheripharal clock Enable" name="004_Pheripharal clock Enable" stamp="1745757949087" updateReferences="true"/>
+</session>

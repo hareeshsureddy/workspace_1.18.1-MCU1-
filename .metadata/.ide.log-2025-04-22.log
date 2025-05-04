@@ -1,0 +1,5 @@
+2025-04-23 00:31:48,263 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2025-04-23 00:31:48,380 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2025-04-23 00:31:48,388 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2025-04-23 00:32:01,277 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+2025-04-23 00:32:01,278 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Continuing ...

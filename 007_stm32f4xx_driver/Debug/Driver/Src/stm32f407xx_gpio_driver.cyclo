@@ -1,0 +1,10 @@
+../Driver/Src/stm32f407xx_gpio_driver.c:24:6:GPIO_PeripClkCntr	24
+../Driver/Src/stm32f407xx_gpio_driver.c:76:6:GPIO_PeripClkCntr_Alt	2
+../Driver/Src/stm32f407xx_gpio_driver.c:95:6:GPIO_Init	16
+../Driver/Src/stm32f407xx_gpio_driver.c:181:6:GPIO_Dinit	12
+../Driver/Src/stm32f407xx_gpio_driver.c:209:6:GPIO_Dinit_Alt	2
+../Driver/Src/stm32f407xx_gpio_driver.c:230:9:GPIO_ReadfromInputPin	1
+../Driver/Src/stm32f407xx_gpio_driver.c:235:10:GPIO_ReadfromInputPort	1
+../Driver/Src/stm32f407xx_gpio_driver.c:240:6:GPIO_WritetoOutputPin	2
+../Driver/Src/stm32f407xx_gpio_driver.c:246:6:GPIO_WritetoOutputPort	1
+../Driver/Src/stm32f407xx_gpio_driver.c:250:6:GPIO_ToggleOutPin	1

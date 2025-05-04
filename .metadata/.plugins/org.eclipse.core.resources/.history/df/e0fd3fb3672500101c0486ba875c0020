@@ -1,0 +1,13 @@
+/*
+ * stm32f407xx_gpio_drive.h
+ *
+ *  Created on: Apr 30, 2025
+ *      Author: Hareesh
+ */
+
+#ifndef INC_STM32F407XX_GPIO_DRIVE_H_
+#define INC_STM32F407XX_GPIO_DRIVE_H_
+
+#include <stm32f407xx.h>
+
+#endif /* INC_STM32F407XX_GPIO_DRIVE_H_ */

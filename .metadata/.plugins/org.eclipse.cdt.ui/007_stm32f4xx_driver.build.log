@@ -1,0 +1,17 @@
+06:55:17 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1816	      0	   1568	   3384	    d38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+
+06:55:18 Build Finished. 0 errors, 0 warnings. (took 1s.608ms)
+

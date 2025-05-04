@@ -1,0 +1,13 @@
+/*
+ * stm32f407xx_gpio_vars.h
+ *
+ *  Created on: May 3, 2025
+ *      Author: Hareesh
+ */
+#ifndef INC_STM32F407XX_GPIO_VARS_H_
+#define INC_STM32F407XX_GPIO_VARS_H_
+#include "stm32f407xx_gpio_drive.h"
+
+GPIO_PinConfig_t GPIO_Congig_data;
+
+#endif /* INC_STM32F407XX_GPIO_VARS_H_ */

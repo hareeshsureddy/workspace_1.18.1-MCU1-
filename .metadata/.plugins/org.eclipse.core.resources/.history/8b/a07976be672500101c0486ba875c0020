@@ -1,0 +1,27 @@
+/*
+ * stm32f407xx_gpio_drive.h
+ *
+ *  Created on: Apr 30, 2025
+ *      Author: Hareesh
+ */
+
+#ifndef INC_STM32F407XX_GPIO_DRIVE_H_
+#define INC_STM32F407XX_GPIO_DRIVE_H_
+
+#include <stm32f407xx.h>
+
+/*GPIO configuration structure */
+typedef struct{
+	uint8_t GPIO_PinNumber;
+	uint8_t GPIO_PinMode;
+	uint8_t GPIO_PinSpeed;
+	uint8_t GPIO_PinPupdControl;
+	uint8_t GPIO_PinOPtype;
+	uint8_t GPIO_PinAltFunMode;
+}GPIO_PinConfig_t;
+/*GPIO handle structure*/
+typedef struct{
+	GPIOx_RegDef_t *pGPIO_Reg_t;
+	GPIO_config_t	GPIO_confg;
+}GPIO_handle_t;
+#endif /* INC_STM32F407XX_GPIO_DRIVE_H_ */

@@ -1,0 +1,4 @@
+1746258539364	Delete resource '007_stm32f4xx_driver/Src/main.c'
+1746258558559	Delete resource '007_stm32f4xx_driver/Src/syscalls.c'
+1746258562113	Delete resource '007_stm32f4xx_driver/Src/sysmem.c'
+1746259533224	Delete resource '007_stm32f4xx_driver/Driver/Inc/stm32f407xx_gpio_vars.h'

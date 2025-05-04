@@ -1,0 +1,65 @@
+/*
+ * stm32f407xx_gpio_driver.c
+ *
+ *  Created on: Apr 30, 2025
+ *      Author: Hareesh
+ */
+#include "stm32f407xx_gpio_drive.h"
+
+/*GPIO API's */
+/*GPIO Peripharal clock control*/
+/***********************************************************************
+ * @Function name   -GPIO_PeripClkCntr
+ *
+ * @Brief           -This function Enables or Disables the peripheral clock for the given port
+ *
+ * @parameter{in]   - Base address of GPIO peripheral
+ * @parameter{in]   - Enable or Disable macro
+ * @parameter{in]   -
+ *
+ * @return          -
+ *
+ * @note			-
+ */
+void GPIO_PeripClkCntr(GPIOx_RegDef_t *pGPIOx, uint8_t EnorDI){
+		if (EnorDI==Enable){
+			if (pGPIOx==GPIOA)
+				GPIOA_PCLK_EN;
+				esle if (pGPIOx==GPIOB)
+					GPIOB_PCLK_EN;
+					esle if (pGPIOx==GPIOC)
+						GPIOC_PCLK_EN;
+						esle if (pGPIOx==GPIOD)
+							GPIOD_PCLK_EN;
+							esle if (pGPIOx==GPIOE)
+								GPIOE_PCLK_EN;
+								esle if (pGPIOx==GPIOF)
+									GPIOF_PCLK_EN;
+									esle if (pGPIOx==GPIOG)
+										GPIOG_PCLK_EN;
+										esle if (pGPIOx==GPIOH)
+											GPIOH_PCLK_EN;
+											esle if (pGPIOx==GPIOI)
+												GPIOI_PCLK_EN;
+												esle if (pGPIOx==GPIOJ)
+													GPIOJ_PCLK_EN;
+													esle if (pGPIOx==GPIOK)
+														GPIOK_PCLK_EN;
+		}
+		else
+		{
+
+		}
+}
+/*GPIO Init and Dinit*/
+void GPIO_Init(GPIO_handle_t *pGPIOHandle);
+void GPIO_Dinit(GPIOx_RegDef_t *pGPIOx);
+/*Data read and write*/
+uint8_t GPIO_ReadfromInputPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadfromInputPort(GPIOx_RegDef_t *pGPIOx);
+void GPIO_WritetoOutputPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+void GPIO_WritetoOutputPort(GPIOx_RegDef_t *pGPIOx,uint16_t Value);
+void GPIO_ToggleOutPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber);
+/*IRQ configurations and ISR handling*/
+void GPIO_IRQConfig(uint8_t IRQnuber, uint8_t Periority, uint8_t EnorDi );
+void GPIO_IRQHandling(void);

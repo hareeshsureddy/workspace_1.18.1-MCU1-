@@ -1,0 +1,44 @@
+/*
+ * stm32f407xx_gpio_drive.h
+ *
+ *  Created on: Apr 30, 2025
+ *      Author: Hareesh
+ */
+
+#ifndef INC_STM32F407XX_GPIO_DRIVE_H_
+#define INC_STM32F407XX_GPIO_DRIVE_H_
+
+#include <stm32f407xx.h>
+
+/*GPIO configuration structure */
+typedef struct{
+	uint8_t GPIO_PinNumber;
+	uint8_t GPIO_PinMode;
+	uint8_t GPIO_PinSpeed;
+	uint8_t GPIO_PinPupdControl;
+	uint8_t GPIO_PinOPtype;
+	uint8_t GPIO_PinAltFunMode;
+}GPIO_PinConfig_t;
+/*GPIO handle structure*/
+typedef struct{
+	GPIOx_RegDef_t *pGPIOx;
+	GPIO_PinConfig_t	GPIO_confg;
+}GPIO_handle_t;
+#endif /* INC_STM32F407XX_GPIO_DRIVE_H_ */
+
+
+/*GPIO API's */
+/*GPIO Peripharal clock control*/
+void GPIO_PeripClkCntr(GPIOx_RegDef_t *pGPIOx, uint8_t EnorDI);
+/*GPIO Init and Dinit*/
+void GPIO_Init(GPIO_handle_t *pGPIOHandle);
+void GPIO_Dinit(GPIOx_RegDef_t *pGPIOx);
+/*Data read and write*/
+uint8_t GPIO_ReadfromInputPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadfromInputPort(GPIOx_RegDef_t *pGPIOx,);
+void GPIO_WritetoOutputPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+void GPIO_WritetoOutputPort(GPIOx_RegDef_t *pGPIOx,uint16_t Value);
+void GPIO_ToggleOutPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber);
+/*IRQ configurations and ISR handling*/
+void GPIO_IRQConfig(void);
+void GPIO_IRQHandling(void);
