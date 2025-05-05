@@ -36,3 +36,7 @@ int main(void)
 	}
 
 }
+
+void EXTI0_IRQHandler(void){
+	GPIO_IRQHandling(0);
+}

@@ -251,5 +251,31 @@ void GPIO_ToggleOutPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber){
 		pGPIOx->ODR^=(1<<PinNumber);
 }
 /*IRQ configurations and ISR handling*/
-void GPIO_IRQConfig(uint8_t IRQnuber, uint8_t Periority, uint8_t EnorDi );
-void GPIO_IRQHandling(void);
+void GPIO_IRQConfig(uint8_t IRQnumber, uint8_t EnorDi ){
+	uint8_t reg_idx=IRQnumber/32;
+	uint8_t bit_pos=IRQnumber%32;
+	if (EnorDi==ENABLE){
+		NVIC_ISER_REG->NVIC_ISER[reg_idx]|=(1<<bit_pos);
+	}
+	else{
+		NVIC_ICER_REG->NVIC_ICER[reg_idx]&=~(1<<bit_pos);
+	}
+
+}
+
+void GPIO_IRQPriority_Config(uint8_t IRQnumber, uint8_t Priority){
+
+	uint8_t reg_idx=IRQnumber/4;
+	uint8_t bit_pos=(IRQnumber%4)*8;
+	/*
+	NVIC_IPR_REG->NVIC_IPR[reg_idx]|=(Priority<<bit_pos);
+	*/
+	uint8_t Shift_bits=(bit_pos)+(8-NO_BITS_IMPLEMENTED);
+	*(NVIC_IPR_REG_BASEADDR+(reg_idx*4))|=(Priority<<Shift_bits);
+}
+void GPIO_IRQHandling(uint8_t PinNumber){
+	//Clear the pending interrupt
+	if(EXTI->EXTI_PR&(1<<PinNumber)){
+		EXTI->EXTI_PR|=(1<<PinNumber);
+	}
+}

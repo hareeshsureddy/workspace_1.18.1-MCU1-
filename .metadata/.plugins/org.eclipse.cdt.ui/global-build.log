@@ -3140,3 +3140,124 @@ Finished building: default.size.stdout
  
 Finished building: 007_stm32f4xx_driver.list
  
+07:30:56 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/002_Toggle_LED_onInput.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/002_Toggle_LED_onInput.d" -MT"Src/002_Toggle_LED_onInput.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/002_Toggle_LED_onInput.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+../Driver/Src/stm32f407xx_gpio_driver.c: In function 'GPIO_IRQConfig':
+../Driver/Src/stm32f407xx_gpio_driver.c:258:17: warning: statement with no effect [-Wunused-value]
+  258 |                 IRQnumber
+      |                 ^~~~~~~~~
+../Driver/Src/stm32f407xx_gpio_driver.c:258:26: error: expected ';' before '}' token
+  258 |                 IRQnumber
+      |                          ^
+      |                          ;
+  259 |         }
+      |         ~                 
+../Driver/Src/stm32f407xx_gpio_driver.c:257:25: warning: unused variable 'bit_pos' [-Wunused-variable]
+  257 |                 uint8_t bit_pos=IRQnumber%32;
+      |                         ^~~~~~~
+../Driver/Src/stm32f407xx_gpio_driver.c:256:25: warning: unused variable 'reg_idx' [-Wunused-variable]
+  256 |                 uint8_t reg_idx=IRQnumber/32;
+      |                         ^~~~~~~
+make: *** [Driver/Src/subdir.mk:19: Driver/Src/stm32f407xx_gpio_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:41:41 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/002_Toggle_LED_onInput.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/002_Toggle_LED_onInput.d" -MT"Src/002_Toggle_LED_onInput.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/002_Toggle_LED_onInput.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1816	      0	   1568	   3384	    d38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:48:51 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/002_Toggle_LED_onInput.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/002_Toggle_LED_onInput.d" -MT"Src/002_Toggle_LED_onInput.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/002_Toggle_LED_onInput.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+../Driver/Src/stm32f407xx_gpio_driver.c: In function 'GPIO_IRQPriority_Config':
+../Driver/Src/stm32f407xx_gpio_driver.c:273:54: error: expected expression before '>' token
+  273 |         *(NVIC_IPR_REG_BASEADDR+reg_idx)|=(Priority<<>bit_pos);
+      |                                                      ^
+../Driver/Src/stm32f407xx_gpio_driver.c:269:17: warning: unused variable 'bit_pos' [-Wunused-variable]
+  269 |         uint8_t bit_pos=(IRQnumber%4)*8;
+      |                 ^~~~~~~
+make: *** [Driver/Src/subdir.mk:19: Driver/Src/stm32f407xx_gpio_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:49:28 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1816	      0	   1568	   3384	    d38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:50:33 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1816	      0	   1568	   3384	    d38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+08:14:08 **** Clean-only build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 clean 
+rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
+rm -rf ./Src/002_Toggle_LED_onInput.cyclo ./Src/002_Toggle_LED_onInput.d ./Src/002_Toggle_LED_onInput.o ./Src/002_Toggle_LED_onInput.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Driver/Src/stm32f407xx_gpio_driver.cyclo ./Driver/Src/stm32f407xx_gpio_driver.d ./Driver/Src/stm32f407xx_gpio_driver.o ./Driver/Src/stm32f407xx_gpio_driver.su
+rm -rf 007_stm32f4xx_driver.elf 007_stm32f4xx_driver.list 007_stm32f4xx_driver.map default.size.stdout
+ 
+08:14:09 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/001_Toggle_LED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/001_Toggle_LED.d" -MT"Src/001_Toggle_LED.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/001_Toggle_LED.o"
+In file included from ../Src/001_Toggle_LED.c:11:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_gpio_drive.h:86:23: error: unknown type name 'unit8_t'; did you mean 'uint8_t'?
+   86 | void GPIO_IRQHandling(unit8_t PinNumber);
+      |                       ^~~~~~~
+      |                       uint8_t
+../Src/001_Toggle_LED.c: In function 'EXTI0_IRQHandler':
+../Src/001_Toggle_LED.c:41:9: warning: implicit declaration of function 'GPIO_IRQHandling'; did you mean 'GPIO_IRQConfig'? [-Wimplicit-function-declaration]
+   41 |         GPIO_IRQHandling(0);
+      |         ^~~~~~~~~~~~~~~~
+      |         GPIO_IRQConfig
+make: *** [Src/subdir.mk:25: Src/001_Toggle_LED.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+08:14:35 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/001_Toggle_LED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/001_Toggle_LED.d" -MT"Src/001_Toggle_LED.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/001_Toggle_LED.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1784	      0	   1568	   3352	    d18	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 

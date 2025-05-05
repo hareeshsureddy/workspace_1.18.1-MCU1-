@@ -11,7 +11,43 @@
 #include "stdint.h"
 
 #define _vo volatile
+/*******************Processor peripheral related address***********************/
+/*Interrupt enable register*/
+#define NVIC_ISER_BASEADDR	(0xE000E100UL)
+#define NVIC_ISER0		((_vo uint32_t*)0xE000E100)
+#define NVIC_ISER1		((_vo uint32_t*)0xE000E104)
+#define NVIC_ISER2		((_vo uint32_t*)0xE000E108)
+#define NVIC_ISER3		((_vo uint32_t*)0xE000E10C)
 
+typedef struct{
+	_vo uint32_t NVIC_ISER[4];
+}NVIC_ISER_t;
+
+#define	NVIC_ISER_REG	((NVIC_ISER_t*)NVIC_ISER_BASEADDR)
+/*Interrupt Disable register*/
+#define NVIC_ICER_BASEADDR	(0xE000E180)
+#define NVIC_ICER0		((_vo uint32_t*)0XE000E180)
+#define NVIC_ICER1		((_vo uint32_t*)0xE000E184)
+#define NVIC_ICER2		((_vo uint32_t*)0xE000E188)
+#define NVIC_ICER3		((_vo uint32_t*)0xE000E18C)
+
+typedef struct{
+	_vo uint32_t NVIC_ICER[4];
+}NVIC_ICER_t;
+
+#define	NVIC_ICER_REG	((NVIC_ICER_t*)NVIC_ICER_BASEADDR)
+
+/*Interrupt priority register*/
+#define NVIC_IPR_BASEADDR	(0xE000E400UL)
+#define NVIC_IPR_REG_BASEADDR	((_vo uint32_t*)(0xE000E400))
+typedef struct{
+	_vo uint32_t NVIC_IPR[60];
+}NVIC_IPR_t;
+
+#define	NVIC_IPR_REG	((NVIC_IPR_t*)NVIC_IPR_BASEADDR)
+
+#define NO_BITS_IMPLEMENTED		(4)
+/*******************Controller Memory address**********************************/
 #define FLASH_BASE_ADDRESS  0x08000000UL
 #define SRAM1_BASE_ADDRESS  0x20000000UL
 #define SRAM1_SIZE			0x1C000UL

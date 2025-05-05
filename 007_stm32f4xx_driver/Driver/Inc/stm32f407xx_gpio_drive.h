@@ -81,5 +81,6 @@ void GPIO_WritetoOutputPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Va
 void GPIO_WritetoOutputPort(GPIOx_RegDef_t *pGPIOx,uint16_t Value);
 void GPIO_ToggleOutPin(GPIOx_RegDef_t *pGPIOx, uint8_t PinNumber);
 /*IRQ configurations and ISR handling*/
-void GPIO_IRQConfig(uint8_t IRQnuber, uint8_t Periority, uint8_t EnorDi );
-void GPIO_IRQHandling(void);
+void GPIO_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+void GPIO_IRQPriority_Config(uint8_t IRQnumber, uint8_t Priority);
+void GPIO_IRQHandling(uint8_t PinNumber);
