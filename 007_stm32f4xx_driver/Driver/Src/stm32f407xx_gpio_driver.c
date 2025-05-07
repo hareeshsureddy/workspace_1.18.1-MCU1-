@@ -166,9 +166,12 @@ void GPIO_Init(GPIO_handle_t *pGPIOHandle){
 	pGPIOHandle->pGPIOx->PUPDR|=temp;
 
 	//4. Configure the Output Type of GPIO pin
+	if (pGPIOHandle->GPIO_confg.GPIO_PinMode==GPIO_MODE_OUT){
+		//Pin output type configure only if pin is output mode
 	pGPIOHandle->pGPIOx->OTYPER&=~(1<<(pGPIOHandle->GPIO_confg.GPIO_PinNumber));
 	temp=(pGPIOHandle->GPIO_confg.GPIO_PinOPtype<<(pGPIOHandle->GPIO_confg.GPIO_PinNumber));
 	pGPIOHandle->pGPIOx->OTYPER|=temp;
+	}
 	//5. Configure the Alternate function of GPIO pin
 	if (pGPIOHandle->GPIO_confg.GPIO_PinMode==GPIO_MODE_ALTFN){
 		uint8_t index=pGPIOHandle->GPIO_confg.GPIO_PinNumber/8;
@@ -263,7 +266,7 @@ void GPIO_IRQConfig(uint8_t IRQnumber, uint8_t EnorDi ){
 
 }
 
-void GPIO_IRQPriority_Config(uint8_t IRQnumber, uint8_t Priority){
+void GPIO_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
 
 	uint8_t reg_idx=IRQnumber/4;
 	uint8_t bit_pos=(IRQnumber%4)*8;
@@ -271,7 +274,7 @@ void GPIO_IRQPriority_Config(uint8_t IRQnumber, uint8_t Priority){
 	NVIC_IPR_REG->NVIC_IPR[reg_idx]|=(Priority<<bit_pos);
 	*/
 	uint8_t Shift_bits=(bit_pos)+(8-NO_BITS_IMPLEMENTED);
-	*(NVIC_IPR_REG_BASEADDR+(reg_idx*4))|=(Priority<<Shift_bits);
+	*(NVIC_IPR_REG_BASEADDR+(reg_idx))|=(Priority<<Shift_bits);
 }
 void GPIO_IRQHandling(uint8_t PinNumber){
 	//Clear the pending interrupt

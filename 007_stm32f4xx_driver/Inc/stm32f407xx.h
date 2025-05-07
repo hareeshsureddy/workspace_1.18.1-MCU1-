@@ -294,6 +294,23 @@ typedef struct {
 #define EXTI_5TO9		23
 #define EXTI_10TO15		40
 
+#define NVIC_IRQ_PR_0	0
+#define NVIC_IRQ_PR_1	1
+#define NVIC_IRQ_PR_2	2
+#define NVIC_IRQ_PR_3	3
+#define NVIC_IRQ_PR_4	4
+#define NVIC_IRQ_PR_5	5
+#define NVIC_IRQ_PR_6	6
+#define NVIC_IRQ_PR_7	7
+#define NVIC_IRQ_PR_8	8
+#define NVIC_IRQ_PR_9	9
+#define NVIC_IRQ_PR_10	10
+#define NVIC_IRQ_PR_11	11
+#define NVIC_IRQ_PR_12	12
+#define NVIC_IRQ_PR_13	13
+#define NVIC_IRQ_PR_14	14
+#define NVIC_IRQ_PR_15	15
+
 /**************Generic macro definitions *******************/
 #define ENABLE	1
 #define DISABLE 0

@@ -34,6 +34,7 @@ int main(void)
 	GPIO_Congig_data.GPIO_confg.GPIO_PinSpeed=GPIO_SPEED_V_HIGH;
 	GPIO_Congig_data.GPIO_confg.GPIO_PinPupdControl=GPIO_NO_PUPD;	/*External PD is there */
 	GPIO_Congig_data.pGPIOx=GPIOB;
+	GPIO_PeripClkCntr_Alt('B',ENABLE);
 	GPIO_Init(pGPIOx_handle);
 	while(1){
 		if (GPIO_ReadfromInputPin(GPIOB,GPIO_PIN_4)){
