@@ -11,10 +11,6 @@
 #include "stdint.h"
 
 #define _vo volatile
-
-#define __I	volatile const	/*Read only*/
-#define __O	volatile		/*write only*/
-#define __IO	volatile	/*Read & write*/
 /* ----------------------------------------------------------------------------
    -- Interrupt vector numbers
    ---------------------------------------------------------------------------- */
@@ -285,20 +281,14 @@ typedef struct {
    ---------------------------------------------------------------------------- */
 
 /*!
- * @addtogroup SPI_Peripheral_Access_Layer SPI Peripheral Access Layer
+ * @addtogroup ASPI_Peripheral_Access_Layer SPI Peripheral Access Layer
  * @{
  */
 
 /** SPI - Register Layout Typedef */
 typedef struct{
-	uint32_t SPI_CR[2];
-	uint32_t SPI_SR;
-	uint32_t SPI_DR;
-	uint32_t  SPI_CRCPR;
-	uint32_t  SPI_RXCRCR;
-	uint32_t  SPI_TXCRCR;
-	uint32_t  SPI_I2SCFGR;
-	uint32_t  SPI_I2SPR;
+
+
 }SPI_Type;
 
 /* ----------------------------------------------------------------------------
@@ -326,14 +316,15 @@ typedef struct{
 
 
 /* SPI - Peripheral instance base addresses */
-
-/** Peripheral SPI0 base pointer */
-#define SPI0                                     ((SPI_Type *)SPI_1_BASEADDRESS)
-/** Array initializer of SPI peripheral base addresses */
-#define SPI_BASE_ADDRS                           { SPI_1_BASEADDRESS }
-/** Array initializer of SPI peripheral base pointers */
-#define SPI_BASE_PTRS                            { SPI0 }
-/** Interrupt vectors for the SPI peripheral type */
+/** Peripheral ADC0 base address */
+#define ADC0_BASE                                (0x400A0000u)
+/** Peripheral ADC0 base pointer */
+#define ADC0                                     ((ADC_Type *)ADC0_BASE)
+/** Array initializer of ADC peripheral base addresses */
+#define ADC_BASE_ADDRS                           { ADC0_BASE }
+/** Array initializer of ADC peripheral base pointers */
+#define ADC_BASE_PTRS                            { ADC0 }
+/** Interrupt vectors for the ADC peripheral type */
 #define ADC_SEQ_IRQS                             { ADC0_SEQA_IRQn, ADC0_SEQB_IRQn }
 #define ADC_THCMP_IRQS                           { ADC0_THCMP_IRQn }
 

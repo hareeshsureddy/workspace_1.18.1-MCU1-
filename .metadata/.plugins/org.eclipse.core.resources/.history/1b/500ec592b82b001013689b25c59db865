@@ -332,7 +332,7 @@ typedef struct{
 /** Array initializer of SPI peripheral base addresses */
 #define SPI_BASE_ADDRS                           { SPI_1_BASEADDRESS }
 /** Array initializer of SPI peripheral base pointers */
-#define SPI_BASE_PTRS                            { SPI0 }
+#define SPI_BASE_PTRS                            { ASPI0 }
 /** Interrupt vectors for the SPI peripheral type */
 #define ADC_SEQ_IRQS                             { ADC0_SEQA_IRQn, ADC0_SEQB_IRQn }
 #define ADC_THCMP_IRQS                           { ADC0_THCMP_IRQn }

@@ -326,14 +326,15 @@ typedef struct{
 
 
 /* SPI - Peripheral instance base addresses */
-
-/** Peripheral SPI0 base pointer */
-#define SPI0                                     ((SPI_Type *)SPI_1_BASEADDRESS)
-/** Array initializer of SPI peripheral base addresses */
-#define SPI_BASE_ADDRS                           { SPI_1_BASEADDRESS }
-/** Array initializer of SPI peripheral base pointers */
-#define SPI_BASE_PTRS                            { SPI0 }
-/** Interrupt vectors for the SPI peripheral type */
+/** Peripheral ADC0 base address */
+#define ADC0_BASE                                (0x400A0000u)
+/** Peripheral ADC0 base pointer */
+#define ADC0                                     ((ADC_Type *)ADC0_BASE)
+/** Array initializer of ADC peripheral base addresses */
+#define ADC_BASE_ADDRS                           { ADC0_BASE }
+/** Array initializer of ADC peripheral base pointers */
+#define ADC_BASE_PTRS                            { ADC0 }
+/** Interrupt vectors for the ADC peripheral type */
 #define ADC_SEQ_IRQS                             { ADC0_SEQA_IRQn, ADC0_SEQB_IRQn }
 #define ADC_THCMP_IRQS                           { ADC0_THCMP_IRQn }
 
