@@ -122,6 +122,7 @@ typedef struct{
 
 /*  Base address of peripherals which are hanging on the APB2 bus*/
 #define SPI_1_BASEADDRESS		(APB2_PERIPH_BASEADDRESS+0x3000)
+#define SPI_4_BASEADDRESS		(APB2_PERIPH_BASEADDRESS+0x3400)
 
 #define USART1_BASEADDRESS		(APB2_PERIPH_BASEADDRESS+0x1000)
 #define USART6_BASEADDRESS		(APB2_PERIPH_BASEADDRESS+0x1400)
@@ -291,15 +292,15 @@ typedef struct {
 
 /** SPI - Register Layout Typedef */
 typedef struct{
-	uint32_t SPI_CR[2];
-	uint32_t SPI_SR;
-	uint32_t SPI_DR;
+	uint32_t  SPI_CR[2];
+	uint32_t  SPI_SR;
+	uint32_t  SPI_DR;
 	uint32_t  SPI_CRCPR;
 	uint32_t  SPI_RXCRCR;
 	uint32_t  SPI_TXCRCR;
 	uint32_t  SPI_I2SCFGR;
 	uint32_t  SPI_I2SPR;
-}SPI_Type;
+}SPIx_RegDef_t;
 
 /* ----------------------------------------------------------------------------
    -- SPI Register Masks
@@ -311,24 +312,32 @@ typedef struct{
  */
 
 /****Clock enable for SPIx   ****/
-#define SPI1_PCLK_EN		RCC->APBENR[1]|=(1<<12)
-#define SPI2_PCLK_EN		RCC->APBENR[0]|=(1<<14)
-#define SPI3_PCLK_EN		RCC->APBENR[0]|=(1<<15)
-#define SPI4_PCLK_EN		RCC->APBENR[1]|=(1<<13)
+#define SPI1_PCLK_EN		(RCC->APBENR[1]|=(1<<12))
+#define SPI2_PCLK_EN		(RCC->APBENR[0]|=(1<<14))
+#define SPI3_PCLK_EN		(RCC->APBENR[0]|=(1<<15))
+#define SPI4_PCLK_EN		(RCC->APBENR[1]|=(1<<13))
 /****Clock disable for SPIx   ****/
-#define SPI1_PCLK_DI		RCC->APBENR[1]&=~(1<<12)
-#define SPI2_PCLK_DI		RCC->APBENR[0]&=~(1<<14)
-#define SPI3_PCLK_DI		RCC->APBENR[0]&=~(1<<15)
-#define SPI4_PCLK_DI		RCC->APBENR[1]&=~(1<<13)
+#define SPI1_PCLK_DI		(RCC->APBENR[1]&=~(1<<12))
+#define SPI2_PCLK_DI		(RCC->APBENR[0]&=~(1<<14))
+#define SPI3_PCLK_DI		(RCC->APBENR[0]&=~(1<<15))
+#define SPI4_PCLK_DI		(RCC->APBENR[1]&=~(1<<13))
 /*!
  * @}
  */ /* end of group SPI_Register_Masks */
-
-
+#define	SPI1_RESET			(RCC->APBRSTR[1]|=(1<<12));\
+							(RCC->APBRSTR[1]&=~(1<<12))
+#define	SPI2_RESET			(RCC->APBRSTR[0]|=(1<<14));\
+							(RCC->APBRSTR[0]&=~(1<<14))
+#define	SPI3_RESET			(RCC->APBRSTR[0]|=(1<<15));\
+							(RCC->APBRSTR[0]&=~(1<<15))
+#define	SPI4_RESET			do{(RCC->APBRSTR[1]|=(1<<13)); (RCC->APBRSTR[0]&=~(1<<13)); }while(0)
 /* SPI - Peripheral instance base addresses */
 
 /** Peripheral SPI0 base pointer */
-#define SPI0                                     ((SPI_Type *)SPI_1_BASEADDRESS)
+#define SPI1                  ((SPIx_RegDef_t *)SPI_1_BASEADDRESS)
+#define SPI2                  ((SPIx_RegDef_t *)SPI_2_BASEADDRESS)
+#define SPI3                  ((SPIx_RegDef_t *)SPI_3_BASEADDRESS)
+#define SPI4                  ((SPIx_RegDef_t *)SPI_4_BASEADDRESS)
 /** Array initializer of SPI peripheral base addresses */
 #define SPI_BASE_ADDRS                           { SPI_1_BASEADDRESS }
 /** Array initializer of SPI peripheral base pointers */
@@ -386,4 +395,6 @@ typedef struct{
 #define GPIO_PIN_SET	SET
 #define GPIO_PIN_CLR	CLR
 
+#include "stm32f407xx_gpio_drive.h"
+#include "stm32f407xx_SPI_driver.h"
 #endif /* STM32F407XX_H_ */

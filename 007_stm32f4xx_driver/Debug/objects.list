@@ -1,3 +1,4 @@
+"./Driver/Src/stm32f407xx_SPI_driver.o"
 "./Driver/Src/stm32f407xx_gpio_driver.o"
 "./Src/003_Button_interrupt.o"
 "./Src/syscalls.o"

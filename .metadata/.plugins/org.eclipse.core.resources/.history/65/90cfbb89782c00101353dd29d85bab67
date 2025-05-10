@@ -1,0 +1,54 @@
+/*
+ * stm32f407xx_SPI_Driver.h
+ *
+ *  Created on: May 8, 2025
+ *      Author: Hareesh
+ */
+
+#ifndef INC_STM32F407XX_SPI_DRIVER_H_
+#define INC_STM32F407XX_SPI_DRIVER_H_
+
+#include "stm32f407xx.h"
+#include "stdint.h"
+
+/*SPI User configurable parameters structure*/
+typedef struct {
+	uint8_t SPI_DeviceMode;	//Master or slave
+	uint8_t	SPI_Speed;
+	uint8_t SPI_BusConfg;		//Full duplex or half duplex or simple
+	uint8_t SPI_DFF;	//16bit or 8 bit Data frame format
+	uint8_t	SPI_CPOL;
+	uint8_t SPI_CPHA;
+	uint8_t SPI_SSM;		//software slave management;
+}SPI_config_t;
+/* SPI Handle structure*/
+typedef struct{
+	SPI_config_t SPI_Confg_data;
+	SPIx_RegDef_t *pSPIx;
+}SPI_handle_t;
+/* Bit 2MSTR: Master selection
+0: Slave configuration
+1: Master configuration*/
+#define SPI_MASTER	1
+#define SPI_SLAVE	0
+
+
+/*SPI API's */
+/*SPI Peripheral clock control*/
+void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+/*SPI Init and Dinit*/
+void SPI_Init(SPI_handle_t *pSPIHandle);
+void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+
+/*SPI Data receive / Data transmit */
+void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+
+/*IRQ configurations and ISR handling*/
+void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+
+
+
+#endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

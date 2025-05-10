@@ -1,0 +1,124 @@
+/*
+ * stm32f407xx_SPI_Driver.h
+ *
+ *  Created on: May 8, 2025
+ *      Author: Hareesh
+ */
+
+#ifndef INC_STM32F407XX_SPI_DRIVER_H_
+#define INC_STM32F407XX_SPI_DRIVER_H_
+
+#include "stm32f407xx.h"
+#include "stdint.h"
+
+/*SPI User configurable parameters structure*/
+typedef struct {
+	uint8_t SPI_DeviceMode;	//Master or slave
+	uint8_t	SPI_Speed;
+	uint8_t SPI_BusConfg;		//Full duplex or half duplex or simple
+	uint8_t SPI_DFF;	//16bit or 8 bit Data frame format
+	uint8_t	SPI_CPOL;
+	uint8_t SPI_CPHA;
+	uint8_t SPI_SSM;		//software slave management;
+}SPI_config_t;
+/* SPI Handle structure*/
+typedef struct{
+	SPI_config_t SPI_Confg_data;
+	SPIx_RegDef_t *pSPIx;
+}SPI_handle_t;
+
+
+/*
+ * @ SPI Register Bit postion MACROS
+ *
+ */
+
+/* SPI_CR2*/
+#define SPI_CR2_RXDMAEN 0
+#define SPI_CR2_TXDMAEN 1
+#define SPI_CR2_SSOE 	2
+#define SPI_CR2_FRF		4
+#define SPI_CR2_ERRIE	5
+#define SPI_CR2_RXNEIE  6
+#define SPI_CR2_TXEIE	7
+
+/*SPI status register (SPI_SR) */
+#define SPI_SR_RXNE		0
+#define SPI_SR_TXE		1
+#define SPI_SR_CHSIDE 	2
+#define SPI_SR_UDR		3
+#define SPI_SR_CRCERR 	4
+#define SPI_SR_MODF 	5
+#define SPI_SR_OVR		6
+#define SPI_SR_BSY		7
+#define SPI_SR_FRE		8
+/* Bit 2MSTR: Master selection
+0: Slave configuration
+1: Master configuration*/
+#define SPI_DEVICE_MODE_POS 2
+#define SPI_MASTER	1
+#define SPI_SLAVE	0
+/*Bits 5:3BR[2:0]: Baud rate control*/
+#define SPI_BAUDRATE_POS			3
+#define FPCLK_SPEED_DIV2		0
+#define FPCLK_SPEED_DIV4		1
+#define FPCLK_SPEED_DIV8		2
+#define FPCLK_SPEED_DIV16		3
+#define FPCLK_SPEED_DIV32		4
+#define FPCLK_SPEED_DIV64		5
+#define FPCLK_SPEED_DIV128		6
+#define FPCLK_SPEED_DIV256		7
+/*Bit 6 SPE: SPI enable*/
+#define SPI_ENABLE_POS	6
+#define SPI_ENABLE	1
+#define SPI_DISABLE	0
+/*Clock polarity*/
+#define SPI_CPOL_POS	1
+#define SPI_CPOL0	0
+#define SPI_CPOL1	1
+/*Clock phase*/
+#define SPI_CPHA_POS	0
+#define SPI_CPHA0	0
+#define SPI_CPHA1	1
+
+#define MSB_transmitted_first	0
+#define LSB_transmitted_first	1
+//Bit 9 SSM: Software slave management
+#define SPI_SSM_POS 9
+#define SSM_DISABLE				0		//0: Software slave management disabled
+#define SSM_ENABLE				1		//1: Software slave management enable
+/* @SPI_DeviceMode
+ *
+ */
+#define SPI_BUS_CNFG_FD 		0
+#define SPI_BUS_CNFG_HD			1
+#define SPI_BUS_CNFG_SMPLE_RX	2
+
+#define SPI_CRCEN_POS			13
+#define SPI_CRCEN				1
+#define SPI_CRCDI			0
+
+#define SPI_DFF_POS				11
+#define DFF_8					0	//0: 8-bit data frame format is selected for transmission/reception
+#define DFF_16					1  //1: 16-bit data frame format is selected for transmission/reception
+
+
+/*SPI API's */
+/*SPI Peripheral clock control*/
+void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+/*SPI Init and Dinit*/
+void SPI_Init(SPI_handle_t *pSPIHandle);
+void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+
+/*SPI Data receive / Data transmit */
+void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+
+/*IRQ configurations and ISR handling*/
+void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+
+
+
+#endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

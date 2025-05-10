@@ -1,0 +1,50 @@
+/*
+ * stm32f407xx_SPI_driver.c
+ *
+ *  Created on: May 8, 2025
+ *      Author: Hareesh
+ */
+#include "stm32f407xx_SPI_driver.h"
+#include "stm32f407xx.h"
+/*SPI API's */
+/*SPI Peripheral clock control*/
+void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+	if (EnorDI==ENABLE){
+			if (pSPIx==SPI1)
+
+				esle if ()
+	}else
+	{
+
+	}
+
+}
+void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+
+}
+/*SPI Init and Dinit*/
+void SPI_Init(GPIO_handle_t *pGPIOHandle){
+
+}
+void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+
+}
+
+/*SPI Data receive / Data transmit */
+void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+
+}
+void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+
+}
+
+/*IRQ configurations and ISR handling*/
+void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+
+}
+void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+
+}
+void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+
+}

@@ -1,0 +1,117 @@
+/*
+ * stm32f407xx_SPI_driver.c
+ *
+ *  Created on: May 8, 2025
+ *      Author: Hareesh
+ */
+
+#include "stm32f407xx.h"
+#include "stdint.h"
+/*SPI API's */
+/*SPI Peripheral clock control*/
+void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+	if (EnorDI==ENABLE){
+			if (pSPIx==SPI1)
+				SPI1_PCLK_EN;
+				else if (pSPIx==SPI2)
+					SPI2_PCLK_EN;
+					else if (pSPIx==SPI3)
+						SPI3_PCLK_EN;
+					else if (pSPIx==SPI4)
+						SPI4_PCLK_EN;
+	}else
+	{
+		if (pSPIx==SPI1)
+			SPI1_PCLK_DI;
+			else if (pSPIx==SPI2)
+				SPI2_PCLK_DI;
+				else if (pSPIx==SPI3)
+					SPI3_PCLK_DI;
+				else if (pSPIx==SPI4)
+					SPI4_PCLK_DI;
+	}
+
+}
+/*SPI Init and Dinit*/
+void SPI_Init(SPI_handle_t *pSPIHandle){
+// configuring the Device control register 1
+	uint32_t temp=0;
+	//1. configure the device mode
+	temp=(pSPIHandle->SPI_Confg_data.SPI_DeviceMode<<SPI_DEVICE_MODE_POS);
+	//2. Configure the busconfig
+	if(pSPIHandle->SPI_Confg_data.SPI_BusConfg==SPI_BUS_CNFG_FD){
+		temp&=~(1<<15);		//0: 2-line unidirectional data mode selected
+	} else if (pSPIHandle->SPI_Confg_data.SPI_BusConfg==SPI_BUS_CNFG_HD){
+		temp|=(1<<15);		//1: 1-line Bi-directional data mode selected
+	} else if (pSPIHandle->SPI_Confg_data.SPI_BusConfg==SPI_BUS_CNFG_SMPLE_RX){
+		temp&=~(1<<15);	//0: 2-line unidirectional data mode selected
+		temp|=(1<<10);	//Receive only
+	}
+	//3. Baudrate configuration
+	temp|=((pSPIHandle->SPI_Confg_data.SPI_Speed)<<SPI_BAUDRATE_POS);
+	//4. DFF configuration
+	temp|=((pSPIHandle->SPI_Confg_data.SPI_DFF)<<SPI_DFF_POS);
+	//5. SPI Enable
+	temp|=(SPI_ENABLE<<SPI_ENABLE_POS);
+	//6. Clock phase configuration
+	temp|=((pSPIHandle->SPI_Confg_data.SPI_CPHA)<<SPI_CPHA_POS);
+	//7. Clock polarity configuration
+	temp|=((pSPIHandle->SPI_Confg_data.SPI_CPOL)<<SPI_CPOL_POS);
+	//8.  Bit 9 SSM: Software slave management
+	temp|=((pSPIHandle->SPI_Confg_data.SPI_SSM)<<SPI_SSM_POS);
+
+	pSPIHandle->pSPIx->SPI_CR[0]=temp;
+}
+void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+			if (pSPIx==SPI1)
+			{
+				SPI1_RESET;
+			}
+			else if (pSPIx==SPI2)
+			{
+				SPI2_RESET;
+			}
+			else if (pSPIx==SPI3)
+			{
+				SPI3_RESET;
+			}
+			else if (pSPIx==SPI4){
+				SPI4_RESET;
+			}
+}
+
+/*SPI Data receive / Data transmit */
+void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+	while(pSPIx->SPI_SR&(1<<RX_NEMPTY)){
+	}
+}
+void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len){
+	while(Len){
+		//Wait for TX empty
+		while(pSPIx->SPI_SR&(1<<SPI_SR_TXE)){
+			if(pSPIx->SPI_CR[0]&0x0800)
+			{
+			pSPIx->SPI_DR=*((uint16_t*)pTxBuffer);
+			Len--;
+			(uint16_t*)pTxBuffer++;
+			}
+			else
+			{
+			pSPIx->SPI_DR=*pTxBuffer;
+			pTxBuffer++;
+			}
+			Len--;
+		}
+	}
+}
+
+/*IRQ configurations and ISR handling*/
+void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+
+}
+void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+
+}
+void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+
+}

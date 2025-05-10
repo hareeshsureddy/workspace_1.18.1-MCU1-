@@ -1,0 +1,8 @@
+../Driver/Src/stm32f407xx_SPI_driver.c:12:6:SPI_PeripClkCntr	10
+../Driver/Src/stm32f407xx_SPI_driver.c:36:6:SPI_Init	4
+../Driver/Src/stm32f407xx_SPI_driver.c:65:6:SPI_Dinit	5
+../Driver/Src/stm32f407xx_SPI_driver.c:84:6:SPI_DataReceive	1
+../Driver/Src/stm32f407xx_SPI_driver.c:86:6:SPI_DataTransmit	4
+../Driver/Src/stm32f407xx_SPI_driver.c:107:6:SPI_IRQConfig	1
+../Driver/Src/stm32f407xx_SPI_driver.c:110:6:SPI_IRQPriority_Config	1
+../Driver/Src/stm32f407xx_SPI_driver.c:113:6:SPI_IRQHandling	1

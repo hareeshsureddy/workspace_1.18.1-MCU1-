@@ -3523,3 +3523,1423 @@ Finished building: default.size.stdout
  
 Finished building: 007_stm32f4xx_driver.list
  
+06:27:16 **** Clean-only build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 clean 
+rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
+rm -rf ./Src/003_Button_interrupt.cyclo ./Src/003_Button_interrupt.d ./Src/003_Button_interrupt.o ./Src/003_Button_interrupt.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Driver/Src/stm32f407xx_gpio_driver.cyclo ./Driver/Src/stm32f407xx_gpio_driver.d ./Driver/Src/stm32f407xx_gpio_driver.o ./Driver/Src/stm32f407xx_gpio_driver.su
+rm -rf 007_stm32f4xx_driver.elf 007_stm32f4xx_driver.list 007_stm32f4xx_driver.map default.size.stdout
+ 
+06:27:18 **** Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+06:33:13 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:10:23: error: unknown type name 'SPIx_RegDef_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:10:45: error: unknown type name 'uint8_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+../Driver/Src/stm32f407xx_SPI_driver.c:19:27: error: unknown type name 'SPIx_RegDef_t'
+   19 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                           ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:19:49: error: unknown type name 'uint8_t'
+   19 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                                 ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:19:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:23:15: error: unknown type name 'GPIO_handle_t'
+   23 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:26:16: error: unknown type name 'SPIx_RegDef_t'
+   26 | void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+      |                ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:22: error: unknown type name 'SPIx_RegDef_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:43: error: unknown type name 'uint8_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                           ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:31:62: error: unknown type name 'uint32_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                                              ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:34:23: error: unknown type name 'SPIx_RegDef_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:44: error: unknown type name 'uint8_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                            ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:34:63: error: unknown type name 'uint32_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                                               ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:39:20: error: unknown type name 'uint8_t'
+   39 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                    ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:39:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:39:38: error: unknown type name 'uint8_t'
+   39 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                                      ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:39:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:29: error: unknown type name 'uint8_t'
+   42 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:48: error: unknown type name 'uint32_t'
+   42 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                                                ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:45:22: error: unknown type name 'SPIx_RegDef_t'
+   45 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+      |                      ^~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:34:26 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:7:10: fatal error: stm32f407xx_SPI_driver.h: No such file or directory
+    7 | #include "stm32f407xx_SPI_driver.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:36:04 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:12:9: error: unknown type name 'uint8_t'
+   12 |         uint8_t SPI_DeviceMode; //Master or slave
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:13:9: error: unknown type name 'uint8_t'
+   13 |         uint8_t SPI_Speed;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:14:9: error: unknown type name 'uint8_t'
+   14 |         uint8_t SPI_BusConfg;           //Full duplex or half duplex or simple
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:15:9: error: unknown type name 'uint8_t'
+   15 |         uint8_t SPI_DIFF;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:16:9: error: unknown type name 'uint8_t'
+   16 |         uint8_t SPI_CPOL;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:17:9: error: unknown type name 'uint8_t'
+   17 |         uint8_t SPI_CPHA;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:18:9: error: unknown type name 'uint8_t'
+   18 |         uint8_t SPI_SSM;                //software slave management;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:23:9: error: unknown type name 'SPIx_RegDef_t'
+   23 |         SPIx_RegDef_t *pSPIx;
+      |         ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:23: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:45: error: unknown type name 'uint8_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:27: error: unknown type name 'SPIx_RegDef_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                           ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: error: unknown type name 'uint8_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                                 ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:32:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   32 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:33:16: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+      |                ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:22: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                      ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: error: unknown type name 'uint8_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                           ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: error: unknown type name 'uint32_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                                              ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                            ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                                               ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                    ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                                      ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: error: unknown type name 'uint32_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                                                ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:42:22: error: unknown type name 'SPIx_RegDef_t'
+   42 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:10:23: error: unknown type name 'SPIx_RegDef_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:10:45: error: unknown type name 'uint8_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:8:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    7 | #include "stm32f407xx_SPI_driver.h"
+  +++ |+#include <stdint.h>
+    8 | /*SPI API's */
+../Driver/Src/stm32f407xx_SPI_driver.c:19:27: error: unknown type name 'SPIx_RegDef_t'
+   19 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                           ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:19:49: error: unknown type name 'uint8_t'
+   19 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                                 ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:19:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:23:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   23 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+../Driver/Src/stm32f407xx_SPI_driver.c:26:16: error: unknown type name 'SPIx_RegDef_t'
+   26 | void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+      |                ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:22: error: unknown type name 'SPIx_RegDef_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:43: error: unknown type name 'uint8_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                           ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:31:62: error: unknown type name 'uint32_t'
+   31 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                                              ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:31:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:34:23: error: unknown type name 'SPIx_RegDef_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:44: error: unknown type name 'uint8_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                            ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:34:63: error: unknown type name 'uint32_t'
+   34 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                                               ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:39:20: error: unknown type name 'uint8_t'
+   39 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                    ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:39:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:39:38: error: unknown type name 'uint8_t'
+   39 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                                      ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:39:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:29: error: unknown type name 'uint8_t'
+   42 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:48: error: unknown type name 'uint32_t'
+   42 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                                                ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:45:22: error: unknown type name 'SPIx_RegDef_t'
+   45 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+      |                      ^~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:40:26 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:12:9: error: unknown type name 'uint8_t'
+   12 |         uint8_t SPI_DeviceMode; //Master or slave
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:13:9: error: unknown type name 'uint8_t'
+   13 |         uint8_t SPI_Speed;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:14:9: error: unknown type name 'uint8_t'
+   14 |         uint8_t SPI_BusConfg;           //Full duplex or half duplex or simple
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:15:9: error: unknown type name 'uint8_t'
+   15 |         uint8_t SPI_DIFF;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:16:9: error: unknown type name 'uint8_t'
+   16 |         uint8_t SPI_CPOL;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:17:9: error: unknown type name 'uint8_t'
+   17 |         uint8_t SPI_CPHA;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:18:9: error: unknown type name 'uint8_t'
+   18 |         uint8_t SPI_SSM;                //software slave management;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:23:9: error: unknown type name 'SPIx_RegDef_t'
+   23 |         SPIx_RegDef_t *pSPIx;
+      |         ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:23: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:45: error: unknown type name 'uint8_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:27: error: unknown type name 'SPIx_RegDef_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                           ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: error: unknown type name 'uint8_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                                 ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:32:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   32 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:33:16: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+      |                ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:22: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                      ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: error: unknown type name 'uint8_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                           ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: error: unknown type name 'uint32_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                                              ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                            ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                                               ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                    ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                                      ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: error: unknown type name 'uint32_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                                                ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:42:22: error: unknown type name 'SPIx_RegDef_t'
+   42 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:10:23: error: unknown type name 'SPIx_RegDef_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:10:45: error: unknown type name 'uint8_t'
+   10 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:8:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    7 | #include "stm32f407xx_SPI_driver.h"
+  +++ |+#include <stdint.h>
+    8 | /*SPI API's */
+../Driver/Src/stm32f407xx_SPI_driver.c:21:27: error: unknown type name 'SPIx_RegDef_t'
+   21 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                           ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:21:49: error: unknown type name 'uint8_t'
+   21 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                                 ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:21:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:25:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   25 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+../Driver/Src/stm32f407xx_SPI_driver.c:28:16: error: unknown type name 'SPIx_RegDef_t'
+   28 | void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+      |                ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:33:22: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:33:43: error: unknown type name 'uint8_t'
+   33 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                           ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:33:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:33:62: error: unknown type name 'uint32_t'
+   33 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                                              ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:33:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:36:23: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:36:44: error: unknown type name 'uint8_t'
+   36 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                            ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:36:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:36:63: error: unknown type name 'uint32_t'
+   36 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                                               ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:36:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:41:20: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                    ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:41:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:41:38: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                                      ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:41:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:44:29: error: unknown type name 'uint8_t'
+   44 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:44:48: error: unknown type name 'uint32_t'
+   44 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                                                ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:47:22: error: unknown type name 'SPIx_RegDef_t'
+   47 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+      |                      ^~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:41:06 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:12:9: error: unknown type name 'uint8_t'
+   12 |         uint8_t SPI_DeviceMode; //Master or slave
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:13:9: error: unknown type name 'uint8_t'
+   13 |         uint8_t SPI_Speed;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:14:9: error: unknown type name 'uint8_t'
+   14 |         uint8_t SPI_BusConfg;           //Full duplex or half duplex or simple
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:15:9: error: unknown type name 'uint8_t'
+   15 |         uint8_t SPI_DIFF;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:16:9: error: unknown type name 'uint8_t'
+   16 |         uint8_t SPI_CPOL;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:17:9: error: unknown type name 'uint8_t'
+   17 |         uint8_t SPI_CPHA;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:18:9: error: unknown type name 'uint8_t'
+   18 |         uint8_t SPI_SSM;                //software slave management;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:23:9: error: unknown type name 'SPIx_RegDef_t'
+   23 |         SPIx_RegDef_t *pSPIx;
+      |         ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:23: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:45: error: unknown type name 'uint8_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:27: error: unknown type name 'SPIx_RegDef_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                           ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: error: unknown type name 'uint8_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                                 ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:32:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   32 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:33:16: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+      |                ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:22: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                      ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: error: unknown type name 'uint8_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                           ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: error: unknown type name 'uint32_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                                              ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                            ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                                               ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                    ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                                      ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: error: unknown type name 'uint32_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                                                ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:42:22: error: unknown type name 'SPIx_RegDef_t'
+   42 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:8:2: error: invalid preprocessing directive #inlcude; did you mean #include?
+    8 | #inlcude"stm32f407xx.h"
+      |  ^~~~~~~
+      |  include
+../Driver/Src/stm32f407xx_SPI_driver.c:11:23: error: unknown type name 'SPIx_RegDef_t'
+   11 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:11:45: error: unknown type name 'uint8_t'
+   11 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:8:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    7 | #include "stm32f407xx_SPI_driver.h"
+  +++ |+#include <stdint.h>
+    8 | #inlcude"stm32f407xx.h"
+../Driver/Src/stm32f407xx_SPI_driver.c:22:27: error: unknown type name 'SPIx_RegDef_t'
+   22 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                           ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:22:49: error: unknown type name 'uint8_t'
+   22 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI){
+      |                                                 ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:22:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:26:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   26 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+../Driver/Src/stm32f407xx_SPI_driver.c:29:16: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_Dinit(SPIx_RegDef_t *pSPIx){
+      |                ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:22: error: unknown type name 'SPIx_RegDef_t'
+   34 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:43: error: unknown type name 'uint8_t'
+   34 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                           ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:34:62: error: unknown type name 'uint32_t'
+   34 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |                                                              ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:34:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                       ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                            ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len){
+      |                                                               ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:20: error: unknown type name 'uint8_t'
+   42 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                    ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:42:38: error: unknown type name 'uint8_t'
+   42 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi ){
+      |                                      ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:45:29: error: unknown type name 'uint8_t'
+   45 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                             ^~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:45:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:45:48: error: unknown type name 'uint32_t'
+   45 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority){
+      |                                                ^~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:45:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Driver/Src/stm32f407xx_SPI_driver.c:48:22: error: unknown type name 'SPIx_RegDef_t'
+   48 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx){
+      |                      ^~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:41:20 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:12:9: error: unknown type name 'uint8_t'
+   12 |         uint8_t SPI_DeviceMode; //Master or slave
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:13:9: error: unknown type name 'uint8_t'
+   13 |         uint8_t SPI_Speed;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:14:9: error: unknown type name 'uint8_t'
+   14 |         uint8_t SPI_BusConfg;           //Full duplex or half duplex or simple
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:15:9: error: unknown type name 'uint8_t'
+   15 |         uint8_t SPI_DIFF;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:16:9: error: unknown type name 'uint8_t'
+   16 |         uint8_t SPI_CPOL;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:17:9: error: unknown type name 'uint8_t'
+   17 |         uint8_t SPI_CPHA;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:18:9: error: unknown type name 'uint8_t'
+   18 |         uint8_t SPI_SSM;                //software slave management;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:23:9: error: unknown type name 'SPIx_RegDef_t'
+   23 |         SPIx_RegDef_t *pSPIx;
+      |         ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:23: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:45: error: unknown type name 'uint8_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:27: error: unknown type name 'SPIx_RegDef_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                           ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: error: unknown type name 'uint8_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                                 ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:32:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   32 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:33:16: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+      |                ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:22: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                      ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: error: unknown type name 'uint8_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                           ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: error: unknown type name 'uint32_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                                              ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                            ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                                               ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                    ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                                      ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: error: unknown type name 'uint32_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                                                ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:42:22: error: unknown type name 'SPIx_RegDef_t'
+   42 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: error: 'esle' undeclared (first use in this function)
+   15 |                                 esle if ()
+      |                                 ^~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:15:37: error: expected ';' before 'if'
+   15 |                                 esle if ()
+      |                                     ^~~
+      |                                     ;
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:26:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   26 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:41:44 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:12:9: error: unknown type name 'uint8_t'
+   12 |         uint8_t SPI_DeviceMode; //Master or slave
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:13:9: error: unknown type name 'uint8_t'
+   13 |         uint8_t SPI_Speed;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:14:9: error: unknown type name 'uint8_t'
+   14 |         uint8_t SPI_BusConfg;           //Full duplex or half duplex or simple
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:15:9: error: unknown type name 'uint8_t'
+   15 |         uint8_t SPI_DIFF;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:16:9: error: unknown type name 'uint8_t'
+   16 |         uint8_t SPI_CPOL;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:17:9: error: unknown type name 'uint8_t'
+   17 |         uint8_t SPI_CPHA;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:18:9: error: unknown type name 'uint8_t'
+   18 |         uint8_t SPI_SSM;                //software slave management;
+      |         ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:23:9: error: unknown type name 'SPIx_RegDef_t'
+   23 |         SPIx_RegDef_t *pSPIx;
+      |         ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:23: error: unknown type name 'SPIx_RegDef_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:29:45: error: unknown type name 'uint8_t'
+   29 | void SPI_PeripClkCntr(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:27: error: unknown type name 'SPIx_RegDef_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                           ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: error: unknown type name 'uint8_t'
+   30 | void SPI_PeripClkCntr_Alt(SPIx_RegDef_t *pSPIx, uint8_t EnorDI);
+      |                                                 ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:30:49: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:32:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   32 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:33:16: error: unknown type name 'SPIx_RegDef_t'
+   33 | void SPI_Dinit(SPIx_RegDef_t *pSPIx);
+      |                ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:22: error: unknown type name 'SPIx_RegDef_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                      ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: error: unknown type name 'uint8_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                           ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:43: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: error: unknown type name 'uint32_t'
+   36 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len);
+      |                                                              ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:62: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:23: error: unknown type name 'SPIx_RegDef_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                       ^~~~~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: error: unknown type name 'uint8_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                            ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:44: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: error: unknown type name 'uint32_t'
+   37 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |                                                               ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:37:63: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                    ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:20: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: error: unknown type name 'uint8_t'
+   40 | void SPI_IRQConfig(uint8_t IRQnuber, uint8_t EnorDi );
+      |                                      ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:40:38: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: error: unknown type name 'uint8_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                             ^~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: error: unknown type name 'uint32_t'
+   41 | void SPI_IRQPriority_Config(uint8_t IRQnumber, uint32_t Priority);
+      |                                                ^~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:41:48: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:42:22: error: unknown type name 'SPIx_RegDef_t'
+   42 | void SPI_IRQHandling(SPIx_RegDef_t *pSPIx);
+      |                      ^~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: error: 'esle' undeclared (first use in this function)
+   16 |                                 esle if ()
+      |                                 ^~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:16:37: error: expected ';' before 'if'
+   16 |                                 esle if ()
+      |                                     ^~~
+      |                                     ;
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:27:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   27 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:42:22 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:7:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:36:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   36 | void SPI_Init(GPIO_handle_t *pGPIOHandle);
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: error: 'esle' undeclared (first use in this function)
+   16 |                                 esle if ()
+      |                                 ^~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:16:37: error: expected ';' before 'if'
+   16 |                                 esle if ()
+      |                                     ^~~
+      |                                     ;
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:27:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPIx_handle_t'?
+   27 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPIx_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:43:50 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: error: 'esle' undeclared (first use in this function)
+   16 |                                 esle if ()
+      |                                 ^~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:16:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:16:37: error: expected ';' before 'if'
+   16 |                                 esle if ()
+      |                                     ^~~
+      |                                     ;
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:27:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPI_handle_t'?
+   27 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPI_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:45:11 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: error: 'SPI1_PCLK_E' undeclared (first use in this function); did you mean 'SPI1_PCLK_EN'?
+   15 |                                 SPI1_PCLK_E
+      |                                 ^~~~~~~~~~~
+      |                                 SPI1_PCLK_EN
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:15:44: error: expected ';' before 'else'
+   15 |                                 SPI1_PCLK_E
+      |                                            ^
+      |                                            ;
+   16 |                                 else if (pSPIx==SPI2)
+      |                                 ~~~~        
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:30:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPI_handle_t'?
+   30 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPI_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:45:27 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_PeripClkCntr':
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: error: 'SPI1_PCLK_E' undeclared (first use in this function); did you mean 'SPI1_PCLK_EN'?
+   15 |                                 SPI1_PCLK_E;
+      |                                 ^~~~~~~~~~~
+      |                                 SPI1_PCLK_EN
+../Driver/Src/stm32f407xx_SPI_driver.c:15:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c:17:41: error: 'SPI2_PCLK_E' undeclared (first use in this function); did you mean 'SPI2_PCLK_EN'?
+   17 |                                         SPI2_PCLK_E;
+      |                                         ^~~~~~~~~~~
+      |                                         SPI2_PCLK_EN
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:30:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPI_handle_t'?
+   30 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPI_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:48:39 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:30:15: error: unknown type name 'GPIO_handle_t'; did you mean 'SPI_handle_t'?
+   30 | void SPI_Init(GPIO_handle_t *pGPIOHandle){
+      |               ^~~~~~~~~~~~~
+      |               SPI_handle_t
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+06:49:09 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+06:51:20 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+06:51:43 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+06:54:44 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:07:33 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:08:49 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_Dinit':
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:327:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  327 | #define SPI1_RESET                      (RCC->APBRSTR[1]|=(1<<12));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:41:33: note: in expansion of macro 'SPI1_RESET'
+   41 |                                 SPI1_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:40:25: note: some parts of macro expansion are not guarded by this 'if' clause
+   40 |                         if (pSPIx==SPI1)
+      |                         ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:25: error: 'else' without a previous 'if'
+   42 |                         else if (pSPIx==SPI2)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:329:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  329 | #define SPI2_RESET                      (RCC->APBRSTR[0]|=(1<<14));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:43:33: note: in expansion of macro 'SPI2_RESET'
+   43 |                                 SPI2_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:30: note: some parts of macro expansion are not guarded by this 'if' clause
+   42 |                         else if (pSPIx==SPI2)
+      |                              ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:25: error: 'else' without a previous 'if'
+   44 |                         else if (pSPIx==SPI3)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:331:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  331 | #define SPI3_RESET                      (RCC->APBRSTR[0]|=(1<<15));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:45:33: note: in expansion of macro 'SPI3_RESET'
+   45 |                                 SPI3_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:30: note: some parts of macro expansion are not guarded by this 'if' clause
+   44 |                         else if (pSPIx==SPI3)
+      |                              ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:46:25: error: 'else' without a previous 'if'
+   46 |                         else if (pSPIx==SPI4)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:333:108: error: expected expression before ')' token
+  333 | #define SPI4_RESET                      do{(RCC->APBRSTR[1]|=(1<<13)); (RCC->APBRSTR[0]&=~(1<<13)); }while()
+      |                                                                                                            ^
+../Driver/Src/stm32f407xx_SPI_driver.c:47:33: note: in expansion of macro 'SPI4_RESET'
+   47 |                                 SPI4_RESET;
+      |                                 ^~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:10:27 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_Dinit':
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:327:68: error: expected ')' before ';' token
+  327 | #define SPI1_RESET                      ((RCC->APBRSTR[1]|=(1<<12));\
+      |                                         ~                          ^~
+  328 |                                                         (RCC->APBRSTR[1]&=~(1<<12)))
+      |                                                                     
+../Driver/Src/stm32f407xx_SPI_driver.c:41:33: note: in expansion of macro 'SPI1_RESET'
+   41 |                                 SPI1_RESET;
+      |                                 ^~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:329:68: error: expected ')' before ';' token
+  329 | #define SPI2_RESET                      ((RCC->APBRSTR[0]|=(1<<14));\
+      |                                         ~                          ^~
+  330 |                                                         (RCC->APBRSTR[0]&=~(1<<14)))
+      |                                                                     
+../Driver/Src/stm32f407xx_SPI_driver.c:43:33: note: in expansion of macro 'SPI2_RESET'
+   43 |                                 SPI2_RESET;
+      |                                 ^~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:331:68: error: expected ')' before ';' token
+  331 | #define SPI3_RESET                      ((RCC->APBRSTR[0]|=(1<<15));\
+      |                                         ~                          ^~
+  332 |                                                         (RCC->APBRSTR[0]&=~(1<<15)))
+      |                                                                     
+../Driver/Src/stm32f407xx_SPI_driver.c:45:33: note: in expansion of macro 'SPI3_RESET'
+   45 |                                 SPI3_RESET;
+      |                                 ^~~~~~~~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:333:108: error: expected expression before ')' token
+  333 | #define SPI4_RESET                      do{(RCC->APBRSTR[1]|=(1<<13)); (RCC->APBRSTR[0]&=~(1<<13)); }while()
+      |                                                                                                            ^
+../Driver/Src/stm32f407xx_SPI_driver.c:47:33: note: in expansion of macro 'SPI4_RESET'
+   47 |                                 SPI4_RESET;
+      |                                 ^~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:11:23 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_Dinit':
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:327:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  327 | #define SPI1_RESET                      (RCC->APBRSTR[1]|=(1<<12));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:41:33: note: in expansion of macro 'SPI1_RESET'
+   41 |                                 SPI1_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:40:25: note: some parts of macro expansion are not guarded by this 'if' clause
+   40 |                         if (pSPIx==SPI1)
+      |                         ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:25: error: 'else' without a previous 'if'
+   42 |                         else if (pSPIx==SPI2)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:329:68: error: expected ')' before ';' token
+  329 | #define SPI2_RESET                      ((RCC->APBRSTR[0]|=(1<<14));\
+      |                                         ~                          ^~
+  330 |                                                         (RCC->APBRSTR[0]&=~(1<<14))
+      |                                                                     
+../Driver/Src/stm32f407xx_SPI_driver.c:43:33: note: in expansion of macro 'SPI2_RESET'
+   43 |                                 SPI2_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:30: note: '-Wmisleading-indentation' is disabled from this point onwards, since column-tracking was disabled due to the size of the code/headers
+   42 |                         else if (pSPIx==SPI2)
+      |                              ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:30: note: adding '-flarge-source-files' will allow for more column-tracking support, at the expense of compilation time and memory
+../Driver/Src/stm32f407xx_SPI_driver.c:67:1: error: expected declaration or statement at end of input
+   67 | }
+      | ^
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:14:25 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_Dinit':
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:327:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  327 | #define SPI1_RESET()                    (RCC->APBRSTR[1]|=(1<<12));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:41:33: note: in expansion of macro 'SPI1_RESET'
+   41 |                                 SPI1_RESET();
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:40:25: note: some parts of macro expansion are not guarded by this 'if' clause
+   40 |                         if (pSPIx==SPI1)
+      |                         ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:25: error: 'else' without a previous 'if'
+   42 |                         else if (pSPIx==SPI2)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:329:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  329 | #define SPI2_RESET()                    (RCC->APBRSTR[0]|=(1<<14));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:43:33: note: in expansion of macro 'SPI2_RESET'
+   43 |                                 SPI2_RESET();
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:42:30: note: some parts of macro expansion are not guarded by this 'if' clause
+   42 |                         else if (pSPIx==SPI2)
+      |                              ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:25: error: 'else' without a previous 'if'
+   44 |                         else if (pSPIx==SPI3)
+      |                         ^~~~
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:331:41: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  331 | #define SPI3_RESET()                    (RCC->APBRSTR[0]|=(1<<15));\
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:45:33: note: in expansion of macro 'SPI3_RESET'
+   45 |                                 SPI3_RESET();
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:44:30: note: some parts of macro expansion are not guarded by this 'if' clause
+   44 |                         else if (pSPIx==SPI3)
+      |                              ^~
+../Driver/Src/stm32f407xx_SPI_driver.c:46:25: error: 'else' without a previous 'if'
+   46 |                         else if (pSPIx==SPI4)
+      |                         ^~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:47:33: error: 'SPI4_RESET' undeclared (first use in this function)
+   47 |                                 SPI4_RESET;
+      |                                 ^~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:47:33: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:15:48 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_Dinit':
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:333:108: error: expected expression before ')' token
+  333 | #define SPI4_RESET                      do{(RCC->APBRSTR[1]|=(1<<13)); (RCC->APBRSTR[0]&=~(1<<13)); }while()
+      |                                                                                                            ^
+../Driver/Src/stm32f407xx_SPI_driver.c:53:33: note: in expansion of macro 'SPI4_RESET'
+   53 |                                 SPI4_RESET;
+      |                                 ^~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:16:12 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:33:05 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:39:05 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:62:8: error: no macro name given in #define directive
+   62 | #define
+      |        ^
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Src/003_Button_interrupt.c:11:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:62:8: error: no macro name given in #define directive
+   62 | #define
+      |        ^
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:25: Src/003_Button_interrupt.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:40:23 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:28:50 **** Clean-only build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 clean 
+rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
+rm -rf ./Src/003_Button_interrupt.cyclo ./Src/003_Button_interrupt.d ./Src/003_Button_interrupt.o ./Src/003_Button_interrupt.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Driver/Src/stm32f407xx_SPI_driver.cyclo ./Driver/Src/stm32f407xx_SPI_driver.d ./Driver/Src/stm32f407xx_SPI_driver.o ./Driver/Src/stm32f407xx_SPI_driver.su ./Driver/Src/stm32f407xx_gpio_driver.cyclo ./Driver/Src/stm32f407xx_gpio_driver.d ./Driver/Src/stm32f407xx_gpio_driver.o ./Driver/Src/stm32f407xx_gpio_driver.su
+rm -rf 007_stm32f4xx_driver.elf 007_stm32f4xx_driver.list 007_stm32f4xx_driver.map default.size.stdout
+ 
+07:28:56 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:48:53 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataReceive':
+../Driver/Src/stm32f407xx_SPI_driver.c:82:27: error: expected expression before ']' token
+   82 |                 pRxBuffer[];
+      |                           ^
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+07:49:05 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+07:51:34 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
+08:21:55 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataReceive':
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: error: 'RX_NEMPTY' undeclared (first use in this function)
+   85 |         while(pSPIx->SPI_SR&(1<<RX_NEMPTY)){
+      |                                 ^~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c: At top level:
+../Driver/Src/stm32f407xx_SPI_driver.c:88:6: error: conflicting types for 'SPI_DataTransmit'; have 'void(SPIx_RegDef_t *, uint8_t *, uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char *, long unsigned int)'}
+   88 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len){
+      |      ^~~~~~~~~~~~~~~~
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:115:6: note: previous declaration of 'SPI_DataTransmit' with type 'void(SPIx_RegDef_t *, uint8_t,  uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char,  long unsigned int)'}
+  115 | void SPI_DataTransmit(SPIx_RegDef_t *pSPIx,uint8_t pTxBuffer, uint32_t Len);
+      |      ^~~~~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataTransmit':
+../Driver/Src/stm32f407xx_SPI_driver.c:94:41: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   94 |                         pSPIx->SPI_DR=*((uint16_t)pTxBuffer);
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:94:39: error: invalid type argument of unary '*' (have 'int')
+   94 |                         pSPIx->SPI_DR=*((uint16_t)pTxBuffer);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:96:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   96 |                         (uint16_t)pTxBuffer++;
+      |                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:96:25: warning: value computed is not used [-Wunused-value]
+   96 |                         (uint16_t)pTxBuffer++;
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+08:22:14 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Src/003_Button_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/003_Button_interrupt.d" -MT"Src/003_Button_interrupt.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/003_Button_interrupt.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:84:6: error: conflicting types for 'SPI_DataReceive'; have 'void(SPIx_RegDef_t *, uint8_t,  uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char,  long unsigned int)'}
+   84 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |      ^~~~~~~~~~~~~~~
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:114:6: note: previous declaration of 'SPI_DataReceive' with type 'void(SPIx_RegDef_t *, uint8_t *, uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char *, long unsigned int)'}
+  114 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t *pRxBuffer, uint32_t Len);
+      |      ^~~~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataReceive':
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: error: 'RX_NEMPTY' undeclared (first use in this function)
+   85 |         while(pSPIx->SPI_SR&(1<<RX_NEMPTY)){
+      |                                 ^~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataTransmit':
+../Driver/Src/stm32f407xx_SPI_driver.c:94:41: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   94 |                         pSPIx->SPI_DR=*((uint16_t)pTxBuffer);
+      |                                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:94:39: error: invalid type argument of unary '*' (have 'int')
+   94 |                         pSPIx->SPI_DR=*((uint16_t)pTxBuffer);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:96:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   96 |                         (uint16_t)pTxBuffer++;
+      |                         ^
+../Driver/Src/stm32f407xx_SPI_driver.c:96:25: warning: value computed is not used [-Wunused-value]
+   96 |                         (uint16_t)pTxBuffer++;
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+08:22:34 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:84:6: error: conflicting types for 'SPI_DataReceive'; have 'void(SPIx_RegDef_t *, uint8_t,  uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char,  long unsigned int)'}
+   84 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |      ^~~~~~~~~~~~~~~
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:114:6: note: previous declaration of 'SPI_DataReceive' with type 'void(SPIx_RegDef_t *, uint8_t *, uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char *, long unsigned int)'}
+  114 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t *pRxBuffer, uint32_t Len);
+      |      ^~~~~~~~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c: In function 'SPI_DataReceive':
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: error: 'RX_NEMPTY' undeclared (first use in this function)
+   85 |         while(pSPIx->SPI_SR&(1<<RX_NEMPTY)){
+      |                                 ^~~~~~~~~
+../Driver/Src/stm32f407xx_SPI_driver.c:85:33: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+08:22:54 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+../Driver/Src/stm32f407xx_SPI_driver.c:84:6: error: conflicting types for 'SPI_DataReceive'; have 'void(SPIx_RegDef_t *, uint8_t,  uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char,  long unsigned int)'}
+   84 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t pRxBuffer, uint32_t Len){
+      |      ^~~~~~~~~~~~~~~
+In file included from C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc/stm32f407xx.h:399,
+                 from ../Driver/Src/stm32f407xx_SPI_driver.c:8:
+C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc/stm32f407xx_SPI_driver.h:114:6: note: previous declaration of 'SPI_DataReceive' with type 'void(SPIx_RegDef_t *, uint8_t *, uint32_t)' {aka 'void(SPIx_RegDef_t *, unsigned char *, long unsigned int)'}
+  114 | void SPI_DataReceive(SPIx_RegDef_t *pSPIx,uint8_t *pRxBuffer, uint32_t Len);
+      |      ^~~~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f407xx_SPI_driver.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+08:23:03 **** Incremental Build of configuration Debug for project 007_stm32f4xx_driver ****
+make -j2 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Driver/Inc" -I"C:/Users/Hareesh/STM32CubeIDE/workspace_1.18.1/007_stm32f4xx_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_SPI_driver.d" -MT"Driver/Src/stm32f407xx_SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f407xx_SPI_driver.o"
+arm-none-eabi-gcc -o "007_stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Hareesh\STM32CubeIDE\workspace_1.18.1\007_stm32f4xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="007_stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 007_stm32f4xx_driver.elf
+ 
+arm-none-eabi-size  007_stm32f4xx_driver.elf 
+arm-none-eabi-objdump -h -S 007_stm32f4xx_driver.elf  > "007_stm32f4xx_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2072	      0	   1568	   3640	    e38	007_stm32f4xx_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 007_stm32f4xx_driver.list
+ 
